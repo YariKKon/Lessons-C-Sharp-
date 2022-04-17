@@ -35,13 +35,17 @@ ReduceNum(num);
 
 32679 -> 6
 */
-
+/*
 Console.Write("Input number: ");
 int num = Convert.ToInt32(Console.ReadLine());
 
 int ThirdNum(int n)
-{   
+{
     Console.Write(n + " -> ");
+    while(n > 999)
+    {
+        n = n / 10;
+    }
     if(n < 100)
     {
         Console.WriteLine("no third digit");
@@ -49,12 +53,15 @@ int ThirdNum(int n)
     }
     else
     {
-        int result = (n / 100)  ;
+        int result = (n % 10)  ;
         Console.WriteLine(result);
         return result;
     }
+   
+
 }
 ThirdNum(num);
+*/
 
 
 /*Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
@@ -87,3 +94,4 @@ void Weekend( int d)
 }
 Weekend(day);
 */
+
