@@ -42,6 +42,11 @@ for (int i = 0; i < size1; i++)
 17 -> такого числа в массиве нет
 */
 /*
+// Сначала сделал так , видимо плохо понял задачу,отталкивался от примера.
+//Потом посмотрев запись следующего семинара и послушав объяснения,сделал правильный вариант, но первый вариант оставлю на всякий случай.
+
+//Вариант 1. Поиск по значению элемента.
+
 Console.Write("Input elements: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
@@ -66,6 +71,21 @@ string ElementSearch(int[,] matrix, int num)
     }
     return num + " -> There is no such number in the array";
 }
+*/
+
+//Вариант 2. Поиск по координатам.
+
+/*
+void SearchByCoordinates(int[,] matrix, int row, int colum)
+{
+    if (row <= matrix.GetLength(0) && colum <= matrix.GetLength(1))
+    {
+        Console.WriteLine($"Element by coordinates: ({row};{colum}) -> {matrix[row - 1, colum - 1]}");
+    }
+    else
+        Console.WriteLine($"Element by coordinates: ({row};{colum}) -> {"There is no element with such coordinates."}");
+}
+
 
 int[,] matrix = new int[3, 4];
 
@@ -78,8 +98,15 @@ for (int i = 0; i < matrix.GetLength(0); i++)
     }
     Console.WriteLine();
 }
-Console.WriteLine(ElementSearch(matrix, number));
+
+Console.Write("Input the row index: ");
+int posI = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input the column index: ");
+int posJ = Convert.ToInt32(Console.ReadLine());
+SearchByCoordinates((matrix), posI, posJ);
+
 */
+
 
 /*Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
@@ -122,3 +149,18 @@ void ArithmeticMeanOfTheElrmrnts(int[,] matrix)
 }
 ArithmeticMeanOfTheElrmrnts(matrix);
 */
+/*
+Random r = new Random();
+
+Console.CursorVisible= false;
+while (true)
+{
+    Console.SetCursorPosition(
+        left: r.Next(Console.WindowWidth),
+        top: r.Next(Console.WindowHeight)
+    );
+    Console.Write(r.Next(10));
+    Thread.Sleep(1000);
+}
+*/
+
